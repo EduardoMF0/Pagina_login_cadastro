@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<DataContext>(options =>
 {
     var connectionString =
-        builder.Configuration.GetConnectionString("DataBase")
+        builder.Configuration.GetConnectionString("DefaultConnection")
         ?? Environment.GetEnvironmentVariable("CONNECTION_STRING");
 
     options.UseNpgsql(connectionString);
